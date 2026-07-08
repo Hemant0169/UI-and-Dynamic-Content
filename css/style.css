@@ -20,12 +20,10 @@ body {
 .widget {
     background: #fff;
     width: 90%;
-    max-width: 650px;
+    max-width: 650px; 
     border-radius: 15px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.25);
     overflow: hidden;
-
-    /* FIX: remove forced empty space */
     display: flex;
     flex-direction: column;
 }
@@ -35,77 +33,107 @@ body {
     background: #4CAF50;
     color: white;
     text-align: center;
-    padding: 25px 20px;
+    padding: 35px 20px; 
 }
 
 .masthead h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
 }
 
 .tagline {
-    font-size: 1rem;
+    font-size: 1.05rem;
     opacity: 0.9;
 }
 
 /* Main */
 main {
-    padding: 20px;
-    flex: 1; /* pushes footer down properly */
+    padding: 30px; 
+    flex: 1; 
 }
 
-/* Input */
+/* Input Area - Forced Stack Layout */
 .input-area {
     display: flex;
-    gap: 10px;
-    margin-bottom: 12px;
+    flex-direction: column; /* Stacks the input on top and button underneath */
+    gap: 12px;
+    margin-bottom: 5px; 
 }
 
 .input-area input {
-    flex: 1;
-    padding: 12px;
+    width: 100%;
+    padding: 14px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 .input-area button {
-    padding: 12px 16px;
+    width: 100%; /* Makes button stretch full-width */
+    padding: 14px;
     border: none;
     background: #4CAF50;
     color: white;
-    border-radius: 8px;
+    font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
 }
 
-/* Feedback */
+.input-area button:hover {
+    background: #439a46;
+}
+
+/* Feedback/Error Paragraph */
 .feedback {
-    color: red;
-    margin-bottom: 10px;
+    color: #d9534f;
+    font-size: 0.9rem;
+    min-height: 20px; 
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-/* List */
-#itemList li {
+/* List Items with Bottom Borders and Arrow Markers */
+#itemList {
     list-style: none;
-    padding: 10px;
-    background: #f4f4f4;
-    margin-bottom: 8px;
-    border-radius: 8px;
+    margin-top: 10px;
 }
 
-/* Footer FIX (social icons centered properly) */
-footer {
-    background: #f1f1f1;
-    padding: 12px 0;
-    text-align: center;
+#itemList li {
+    padding: 14px 10px;
+    background: transparent; 
+    border-bottom: 1px solid #eaeaea; /* Dividers between items */
+    font-size: 1.05rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
 
-    /* FIX: prevents weird spacing */
+/* Custom indicator generator (The '>' look) */
+#itemList li::before {
+    content: ">";
+    color: #4CAF50;
+    font-weight: bold;
+    margin-right: 12px;
+    font-family: monospace;
+}
+
+/* Footer Links Centered */
+footer {
+    background: #fdfdfd;
+    padding: 25px 0 35px 0;
+    text-align: center;
+    border-top: 1px dashed #eaeaea; 
     margin-top: auto;
 }
 
 footer a {
-    margin: 0 12px;
+    margin: 0 16px;
     color: #555;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     display: inline-block;
+    transition: color 0.2s ease;
 }
 
 footer a:hover {
